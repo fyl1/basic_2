@@ -1,7 +1,8 @@
 @import "../base/_fonts";
 @import "../base/_colors";
 @import "../base/_reset";
-@import "../base/function";
+@import "../base/_functions";
+@import "../base/_functions-em";
 ///////////////////////////////////////////  pages /////////////////////////////
 
 @import "../pages_scss/_pages";
@@ -15,4 +16,8 @@
 @import "../components/_logo";
 @import "../components/footer";
 @import "../components/_modal";
-
+@import "../components/_video";
+@import "../components/_main-video";
+@import "../components/about";
+@import "../components/_work";
+@import "../components/_contacts";
