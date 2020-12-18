@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
 //youtube script
 var tag = document.createElement('script');
-tag.src = "//www.youtube.com/iframe_api";
+tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -131,31 +131,31 @@ onPlayerStateChange = function (event) {
 }
 
 
-$(document).on('click', '.start-video_1', function () {
+$('.start-video_1').on('click', function () {
     $(this).hide();
     $("#player_1").show();
     $("#thumbnail_container_1").hide();
     player_1.playVideo();
 });
-$(document).on('click', '.start-video_2', function () {
+$('.start-video_2').on('click' , function () {
     $(this).hide();
     $("#player_2").show();
     $("#thumbnail_container_2").hide();
     player_2.playVideo();
 });
-$(document).on('click', '.start-video_3', function () {
+$('.start-video_3').on('click', function () {
     $(this).hide();
     $("#player_3").show();
     $("#thumbnail_container_3").hide();
     player_3.playVideo();
 });
-$(document).on('click', '.start-video_4', function () {
+$('.start-video_4').on('click', function () {
     $(this).hide();
     $("#player_4").show();
     $("#thumbnail_container_4").hide();
     player_4.playVideo();
 });
-$(document).on('click', '.start-video_5', function () {
+$('.start-video_5').on('click', function () {
     $(this).hide();
     $("#player_5").show();
     $("#thumbnail_container_5").hide();
@@ -163,3 +163,75 @@ $(document).on('click', '.start-video_5', function () {
 });
 });
 
+$(document).ready(function() {
+// Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+
+// Safari 3.0+ "[object HTMLElementConstructor]" 
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+
+
+// Chrome 1 - 71
+var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+	
+    console.log("isFirefox " + " " +isFirefox );
+console.log("isSafari" + " "+ isSafari);
+console.log("isChrome" + " "+ isChrome);
+
+if (navigator.userAgent.toLowerCase().match(/(ipad)/)) {
+    $(document).ready(function() {
+        $('.video-main').addClass("hidden")
+        $('.video-main-gif').addClass("active")
+        $('.video-main-gif').removeClass("hidden")
+        var videoMainGif=document.querySelector('.video-main-gif')
+        var img_1 = document.createElement('img');
+
+        img_1.src='../image/ezgif.com-gif-maker (1).gif';
+
+        videoMainGif.append(img_1);
+
+    });
+    
+
+
+
+   
+}
+// if (isChrome == false) {
+//     $(document).ready(function() {
+//         $('.video-main').addClass("hidden")
+//         $('.video-main-gif').addClass("active")
+//         $('.video-main-gif').removeClass("hidden")
+//         var videoMainGif=document.querySelector('.video-main-gif')
+//         var img_1 = document.createElement('img');
+
+//         img_1.src='../image/ezgif.com-gif-maker (1).gif';
+
+//         videoMainGif.append(img_1);
+
+//     });
+    
+
+
+
+   
+
+if (navigator.userAgent.toLowerCase().match(/(iphone)/)) {
+    $(document).ready(function() {
+        $('.video-main').addClass("hidden")
+        $('.video-main-mobile').addClass("active")
+        $('.video-main-mobile').removeClass("hidden")
+        var videoMainMobile=document.querySelector('.video-main-mobile')
+        var img_2 = document.createElement('img');
+
+        img_2.src='../image/ezgif.com-gif-maker-mobile.gif';
+
+        videoMainMobile.append(img_2);
+
+    });
+   
+}
+
+});

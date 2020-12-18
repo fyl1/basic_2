@@ -154,6 +154,14 @@ a {
   font-weight: bold;
 }
 
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block !important;
+}
+
 @media (max-width: 767px) {
   .container {
     width: calc(100% - 5vw);
@@ -409,10 +417,6 @@ a {
 .footer-contacts {
   /* .footer-contacts__list */
   /* .footer-contacts__item */
-}
-
-.footer-contacts__item {
-  height: 2.7vw;
 }
 
 .footer-link {
